@@ -5,6 +5,7 @@ import 'package:dart_native/src/ios/runtime/internal/functions.dart';
 import 'package:dart_native/src/ios/runtime/id.dart';
 import 'package:dart_native/src/ios/runtime/internal/native_runtime.dart';
 import 'package:ffi/ffi.dart';
+import 'package:dart_native/src/ios/common/library.dart';
 
 /// Stands for `Class` in iOS.
 ///
@@ -70,5 +71,14 @@ Pointer<Void> _getClass(String className, [Class superclass]) {
     result = nativeGetClass(classNamePtr, basePtr);
   }
   free(classNamePtr);
+  return result;
+}
+
+Object invokeDartMethord(Object target, String name, int argCount, List args) {
+  dynamic result = '';
+  if (initDartAPISuccess) {
+    result = invokeDart(target, name, argCount, args);
+  }
+
   return result;
 }

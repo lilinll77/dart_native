@@ -103,7 +103,13 @@ typedef void (*Dart_NativeMessageHandler_DL)(Dart_Port_DL dest_port_id,
     (Dart_Handle port, Dart_Port_DL * port_id))                                \
   /* Scopes */                                                                 \
   F(Dart_EnterScope, void, ())                                                 \
-  F(Dart_ExitScope, void, ())
+  F(Dart_ExitScope, void, ())                                                  \
+F(Dart_Invoke, Dart_Handle, (Dart_Handle target,   \
+Dart_Handle name,   \
+int number_of_arguments,    \
+Dart_Handle* arguments))    \
+F(Dart_Null, Dart_Handle, ())
+
 
 #define DART_API_ALL_DL_SYMBOLS(F)                                             \
   DART_NATIVE_API_DL_SYMBOLS(F)                                                \

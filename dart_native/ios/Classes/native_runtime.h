@@ -139,6 +139,10 @@ DN_EXTERN void NotifyDeallocToDart(intptr_t address, Dart_Port dartPort);
 
 DN_EXTERN void RegisterDeallocCallback(void (*callback)(intptr_t));
 
+DN_EXTERN Dart_Handle InvokeFuncton(Dart_Handle target,
+                                    Dart_Handle name,
+                                    int number_of_arguments,
+                                    Dart_Handle arguments);
 
 NS_ASSUME_NONNULL_END
 
