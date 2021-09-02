@@ -15,6 +15,11 @@ final initializeApi = nativeDylib.lookupFunction<
     IntPtr Function(Pointer<Void>),
     int Function(Pointer<Void>)>("InitDartApiDL");
 
+final Object Function(Object, Object, int, Object) invokeDart = nativeLib
+    .lookup<NativeFunction<Handle Function(Handle, Handle, Int32, Handle)>>(
+    "InvokeFuncton")
+    .asFunction();
+
 final _dartAPIResult = initializeApi(NativeApi.initializeApiDLData);
 
 final initDartAPISuccess = _dartAPIResult == 0;

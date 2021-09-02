@@ -86,3 +86,11 @@ final void Function(Pointer<Void>, Pointer<Utf8>, Pointer<Utf8>,
                     Int64 dartPort)>>("registerNativeCallback")
         ?.asFunction();
 
+Object invokeDartMethord(Object target, String name, int argCount, List args) {
+    dynamic result = '';
+    if (initDartAPISuccess) {
+        result = invokeDart(target, name, argCount, args);
+    }
+
+    return result;
+}
