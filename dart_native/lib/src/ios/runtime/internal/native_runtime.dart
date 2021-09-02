@@ -141,3 +141,8 @@ final int Function(Object, Pointer<Void>) passObjectToC = nativeDylib
     .lookup<NativeFunction<Int32 Function(Handle, Pointer<Void>)>>(
         "PassObjectToCUseDynamicLinking")
     .asFunction();
+
+final Object Function(Object, Object, int, Object) invokeDart = nativeDylib
+    .lookup<NativeFunction<Handle Function(Handle, Handle, Int32, Handle)>>(
+        "InvokeFuncton")
+    .asFunction();
