@@ -76,9 +76,11 @@ Pointer<Void> _getClass(String className, [Class superclass]) {
 
 Object invokeDartMethord(Object target, String name, int argCount, List args) {
   dynamic result = '';
+  print("yaoru test ");
   if (initDartAPISuccess) {
+    print("yaoru test1");
     result = invokeDart(target, name, argCount, args);
   }
-
+  print("yaoru test2");
   return result;
 }

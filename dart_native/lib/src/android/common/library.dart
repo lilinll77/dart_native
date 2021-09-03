@@ -15,7 +15,7 @@ final initializeApi = nativeDylib.lookupFunction<
     IntPtr Function(Pointer<Void>),
     int Function(Pointer<Void>)>("InitDartApiDL");
 
-final Object Function(Object, Object, int, Object) invokeDart = nativeLib
+final Object Function(Object, Object, int, Object) invokeDart = nativeDylib
     .lookup<NativeFunction<Handle Function(Handle, Handle, Int32, Handle)>>(
     "InvokeFuncton")
     .asFunction();
