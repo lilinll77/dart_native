@@ -144,6 +144,23 @@ DN_EXTERN Dart_Handle InvokeFuncton(Dart_Handle target,
                                     int number_of_arguments,
                                     Dart_Handle arguments);
 
+
+
+DN_EXTERN Dart_Handle InvokeDartNew(Dart_Handle type,
+                                    Dart_Handle constructor_name,
+                                    int number_of_arguments,
+                                    Dart_Handle arguments);
+
+DN_EXTERN Dart_Handle InvokeDartGetType(Dart_Handle library,
+                                     Dart_Handle class_name,
+                                     intptr_t number_of_type_arguments,
+                                     Dart_Handle type_arguments);
+
+DN_EXTERN Dart_Handle InvokeDartRootLibrary(void);
+
+DN_EXTERN Dart_Handle InvokeDartGetLoadedLibraries(void);
+
+
 NS_ASSUME_NONNULL_END
 
 #endif /* native_runtime_h */

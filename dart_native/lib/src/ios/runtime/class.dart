@@ -82,3 +82,43 @@ Object invokeDartMethord(Object target, String name, int argCount, List args) {
 
   return result;
 }
+
+Object InvokeDartNew(Object type, String constructor_name,
+    int number_of_arguments, List arguments) {
+  dynamic result = '';
+  if (initDartAPISuccess) {
+    result =
+        invokeDartNew(type, constructor_name, number_of_arguments, arguments);
+  }
+
+  return result;
+}
+
+Object InvokeDartGetType(Object library, String class_name,
+    int number_of_type_arguments, List type_arguments) {
+  dynamic result = '';
+  if (initDartAPISuccess) {
+    result = invokeDartGetType(
+        library, class_name, number_of_type_arguments, type_arguments);
+  }
+
+  return result;
+}
+
+Object InvokeDartRootLibrary() {
+  dynamic result = null;
+  if (initDartAPISuccess) {
+    result = invokeDartRootLibrary();
+  }
+
+  return result;
+}
+
+Object InvokeDartGetLoadedLibraries() {
+  dynamic result = null;
+  if (initDartAPISuccess) {
+    result = invokeDartGetLoadedLibraries();
+  }
+
+  return result;
+}

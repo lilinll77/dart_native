@@ -108,7 +108,24 @@ F(Dart_Invoke, Dart_Handle, (Dart_Handle target,   \
 Dart_Handle name,   \
 int number_of_arguments,    \
 Dart_Handle* arguments))    \
-F(Dart_Null, Dart_Handle, ())
+F(Dart_Null, Dart_Handle, ())   \
+F(Dart_RootLibrary, Dart_Handle, ()) \
+F(Dart_GetType, Dart_Handle, (Dart_Handle library, \
+Dart_Handle class_name, \
+intptr_t number_of_type_arguments, \
+Dart_Handle* type_arguments)) \
+F(Dart_GetLoadedLibraries, Dart_Handle, ()) \
+F(Dart_LookupLibrary, Dart_Handle, (Dart_Handle url)) \
+F(Dart_New, Dart_Handle, (Dart_Handle type, \
+Dart_Handle constructor_name,   \
+int number_of_arguments,    \
+Dart_Handle* arguments))    \
+F(Dart_InvokeConstructor, Dart_Handle, (Dart_Handle object, \
+Dart_Handle name,   \
+int number_of_arguments,    \
+Dart_Handle* arguments))    \
+F(Dart_GetField, Dart_Handle, (Dart_Handle container, Dart_Handle name))    \
+F(Dart_SetField, Dart_Handle, (Dart_Handle container, Dart_Handle name, Dart_Handle value))
 
 
 #define DART_API_ALL_DL_SYMBOLS(F)                                             \

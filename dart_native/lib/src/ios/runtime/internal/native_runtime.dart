@@ -146,3 +146,25 @@ final Object Function(Object, Object, int, Object) invokeDart = nativeDylib
     .lookup<NativeFunction<Handle Function(Handle, Handle, Int32, Handle)>>(
         "InvokeFuncton")
     .asFunction();
+
+final Object Function(Object, Object, int, Object) invokeDartNew = nativeDylib
+    .lookup<NativeFunction<Handle Function(Handle, Handle, Int32, Handle)>>(
+        "InvokeDartNew")
+    .asFunction();
+
+final Object Function(Object, Object, int, Object) invokeDartGetType = nativeDylib
+    .lookup<NativeFunction<Handle Function(Handle, Handle, Int32, Handle)>>(
+        "InvokeDartGetType")
+    .asFunction();
+
+final Object Function() invokeDartRootLibrary = nativeDylib
+    .lookup<NativeFunction<Handle Function()>>(
+        "InvokeDartRootLibrary")
+    .asFunction();
+
+final Object Function() invokeDartGetLoadedLibraries = nativeDylib
+    .lookup<NativeFunction<Handle Function()>>(
+        "InvokeDartGetLoadedLibraries")
+    .asFunction();
+
+

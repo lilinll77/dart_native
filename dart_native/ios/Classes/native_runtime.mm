@@ -822,3 +822,63 @@ Dart_Handle InvokeFuncton(Dart_Handle target,
     
     return Dart_NewApiError_DL("Dart_Invoke_DL invalid");
 }
+
+Dart_Handle InvokeDartNew(Dart_Handle type,
+                          Dart_Handle constructor_name,
+                          int number_of_arguments,
+                          Dart_Handle arguments) {
+    if(Dart_New_DL) {
+        return Dart_New_DL(type, constructor_name, number_of_arguments, &arguments);
+    }
+    
+    if (Dart_Null_DL) {
+        return Dart_Null_DL();
+    }
+    
+    return Dart_NewApiError_DL("Dart_New_DL invalid");
+    
+}
+
+Dart_Handle InvokeDartGetType(Dart_Handle library,
+                              Dart_Handle class_name,
+                              intptr_t number_of_type_arguments,
+                              Dart_Handle type_arguments) {
+    if(Dart_GetType_DL) {
+        Dart_Handle ret = Dart_GetType_DL(library, class_name, number_of_type_arguments, &type_arguments);
+        
+        if (!Dart_IsError_DL(ret)) {
+            return ret;
+        }
+    }
+    
+    if (Dart_Null_DL) {
+        return Dart_Null_DL();
+    }
+    
+    return Dart_NewApiError_DL("Dart_New_DL invalid");
+}
+
+Dart_Handle InvokeDartRootLibrary() {
+    if(Dart_RootLibrary_DL) {
+        return Dart_RootLibrary_DL();
+    }
+    
+    if (Dart_Null_DL) {
+        return Dart_Null_DL();
+    }
+    
+    return Dart_NewApiError_DL("Dart_New_DL invalid");
+}
+
+Dart_Handle InvokeDartGetLoadedLibraries(void) {
+    if(Dart_GetLoadedLibraries_DL) {
+        return Dart_GetLoadedLibraries_DL();
+    }
+    
+    if (Dart_Null_DL) {
+        return Dart_Null_DL();
+    }
+    
+    return Dart_NewApiError_DL("Dart_RGetLoadedLibraries_DL invalid");
+}
+
