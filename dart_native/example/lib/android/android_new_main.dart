@@ -68,6 +68,11 @@ class _AndroidNewApp extends State<AndroidNewApp> {
             InstanceTest instance = InstanceTest();
             print("hello test");
             dynamic ret = invokeDartMethord1(instance, "world", 0, null);
+            print("yaoru check test ret");
+            if (ret != Null) {
+              print("yaoru start test ret");
+              print("yaoru ret: $ret");
+            }
             print("hello test");
 
           },
